@@ -1,6 +1,6 @@
 <p>counter works!</p>
-<button (click)="increment()">+</button>
+<button [disabled]="value >= 100" (click)="increment()">+</button>
 
-<p>{{value}}</p>
+<p [class.big]="value === 50">{{value}}</p>
 
-<button (click)="decrement()">-</button>
+<button [disabled]="value ===0" (click)="decrement()">-</button>
