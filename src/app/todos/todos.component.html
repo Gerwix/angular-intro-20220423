@@ -1,6 +1,17 @@
 <p>todos works!</p>
+<div *ngIf="!text">type text</div>
 <input [(ngModel)]="text">
 
 <span>{{text}}</span>
 
+<button (click)="addTodo()">add</button>
 <button (click)="clear()">clear</button>
+
+<div *ngIf="todos.length === 0">list is empty</div>
+
+<ol>
+    <li *ngFor="let todo of todos">{{todo.text}}
+        <span>{{todo.created}}</span>
+
+    </li>
+</ol>
