@@ -15,10 +15,10 @@ const routes: Routes = [
   component: TodosComponent,
 },
 {
-  path: '',
+  path: '**',
   redirectTo: 'todos',
   pathMatch: 'full'
-}
+},
 ];
 
  
