@@ -1,6 +1,6 @@
 <p>todos works!</p>
 <div *ngIf="!text">type text</div>
-<input [(ngModel)]="text">
+<input [(ngModel)]="text" (keyup.enter)="addTodo()">
 
 <span>{{text}}</span>
 
@@ -11,7 +11,18 @@
 
 <ol>
     <li *ngFor="let todo of todos">{{todo.text}}
-        <span>{{todo.created}}</span>
+        <!-- <span>{{todo.created}}</span> -->
+        <input type="checkbox" [(ngModel)]="todo.done">
+        <span [ngClass]="{done: todo.done}"></span>
+        <span class="priority">
+            <span [ngSwitch]="todo.priority">
+                <span *ngSwitchCase="1">Height</span>
+                <span *ngSwitchCase="2">medium</span>
+                <span *ngSwitchDefault>Low</span>
 
+            </span>
+            priority
+        </span>
+<button (click)="setDone(todo)">&check;</button>
     </li>
 </ol>
