@@ -1,10 +1,21 @@
-<router-outlet></router-outlet>
 
 <h1>Hello Angular!</h1>
 
 <p>Example application paragraph.</p>
-<p>2+2</p>
-<p>{{2+2}}</p>
-<app-counter></app-counter>
+<router-outlet></router-outlet>
+<ul>
+    <li>
 
-<app-todos></app-todos>
+        <a routerLink="/" routerLinkActive="activ">home</a>
+    </li>
+
+    <li>
+
+        <a routerLink="/counter" routerLinkActive="activ">counter</a>
+    </li>
+    <li>
+        <a routerLink="/todos" routerLinkActive="activ">todos</a>
+    </li>
+
+
+</ul>
