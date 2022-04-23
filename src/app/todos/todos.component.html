@@ -10,10 +10,10 @@
 <div *ngIf="todos.length === 0">list is empty</div>
 
 <ol>
-    <li *ngFor="let todo of todos">{{todo.text}}
+    <li *ngFor="let todo of todos">
         <!-- <span>{{todo.created}}</span> -->
         <input type="checkbox" [(ngModel)]="todo.done">
-        <span [ngClass]="{done: todo.done}"></span>
+        <span [ngClass]="{done: todo.done}">{{todo.text}} </span>
         <span class="priority">
             <span [ngSwitch]="todo.priority">
                 <span *ngSwitchCase="1">Height</span>
