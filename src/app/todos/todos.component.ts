@@ -8,6 +8,11 @@ import { Todo } from './todo';
 })
 export class TodosComponent implements OnInit {
   public todos: Todo[] = []
+  public text: string = 'text';
+
+  public clear() {
+    this.text = '';
+  }
   constructor() { }
 
   ngOnInit(): void {
